@@ -1,0 +1,64 @@
+.wrap{
+    --pcolor: #1b1b1b;
+
+    font-size: 16px;
+    color: var(--pcolor);
+    
+
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .flex{
+        display: flex;
+       
+    }
+    a, button{
+        cursor: pointer;
+    }
+    header{
+        padding: 20px 0;
+        font-weight: 500 ;
+
+        .menu{
+            @extend .flex;
+            gap:30px;
+
+            a{
+                border-bottom:1px solid transparent;
+                padding-bottom: 4px;
+                transition: all 0.3s ease-in-out;
+
+                &:hover, &.active{
+                    border-bottom:1px solid var(--pcolor);
+                }
+
+                &.border0{
+                    border: 0;
+                }
+               
+                svg{
+                    width: 24px;
+                    height: 24px;
+                }
+
+                &.theme{
+                    background-color: var(--pcolor);
+                }
+
+            }
+
+        }
+
+        .logo{
+            background-color: var(--pcolor);
+            padding: 16px;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 800;
+
+        }
+    }
+}
