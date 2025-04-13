@@ -1,7 +1,7 @@
 .wrap{
     --pcolor: #1b1b1b;
 
-    font-size: 16px;
+    font-size: 22px;
     color: var(--pcolor);
     
 
@@ -16,22 +16,66 @@
     }
     a, button{
         cursor: pointer;
+        transform: translateY(0);
+        transition: all .4s ;
+
+        &:hover{
+            
+            transform: translateY(-3px);
+        }
+    }
+
+    button{
+        padding: 12px 24px;
+        border: 1px solid transparent;
+        outline: none;
+        border-radius: 8px;
+        @extend .flex;
+        gap: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        
+        &.primary{
+              background-color: var(--pcolor);
+              color: #fff;
+
+              svg{
+                fill:#fff ;
+                width: 18px;
+              }
+
+              &:hover{
+                background-color: transparent;
+                color: var(--pcolor);
+                border: 1px solid var(--pcolor);
+
+                svg{
+                    fill: var(--pcolor);
+                }
+              }
+        }
     }
     header{
-        padding: 20px 0;
-        font-weight: 500 ;
+        padding: 20px 0px;
+        font-weight: 600 ;
+        align-items: center;
 
         .menu{
             @extend .flex;
             gap:30px;
 
             a{
-                border-bottom:1px solid transparent;
+                border-bottom: 1px solid transparent;
                 padding-bottom: 4px;
-                transition: all 0.3s ease-in-out;
+                transition: all .4s ;
+                align-items: center;
+                transform: translateY(0);
 
                 &:hover, &.active{
                     border-bottom:1px solid var(--pcolor);
+                }
+                &:hover{
+                    transform: translateY(-5px);
                 }
 
                 &.border0{
@@ -39,12 +83,24 @@
                 }
                
                 svg{
-                    width: 24px;
-                    height: 24px;
+                    width: 22px;
+                    height: 22px;
                 }
 
                 &.theme{
                     background-color: var(--pcolor);
+                    border-radius: 50%;
+                    width: 22px;
+                    height: 22px;
+                    padding: 2px;
+                    @extend .flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg{
+                        width: 20px;
+                        height: 20px;
+                    }
                 }
 
             }
@@ -53,12 +109,108 @@
 
         .logo{
             background-color: var(--pcolor);
-            padding: 16px;
-            border-radius: 50%;
+            padding: 18px;
+            border-radius: 48%;
             color: #fff;
             font-size: 24px;
             font-weight: 800;
+            cursor: pointer;
+        
+           
 
+
+            &:hover{
+                animation: bg-anim 2s linear infinite ; 
+            }
+        }
+    }
+
+    .content{
+        h1{
+            margin:0 0 30px;
+            font-size: 70px;
+            line-height: 65px;
+
+        }
+        p{
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 24px;
+            margin: 0 0 30px;
+        }
+
+        .btn-wrap{
+            @extend .flex;
+            gap: 20px;
+            align-items: center;
+
+            a{
+                font-size: 16px;
+                font-weight: 600;
+                text-decoration: underline;  
+            }
+
+        }
+
+        .bulb{
+            position: absolute;
+            right: 20px ;
+            bottom: 20px;
+
+        }
+
+        .hire-me{
+            position: absolute;
+            left: 46px;
+            bottom: 35px;
+            display: flex;
+            align-items: center;
+
+            svg{
+                width: 160px;
+                height: fit-content;
+                animation: rotate-anim 5s linear infinite;
+            }
+
+            div{
+                background-color: var(--pcolor);
+                 color: #fff;
+                 font-weight: 600;
+                 width: 80px;
+                 height: 80px;
+                 border-radius: 50%;
+                 display: flex;
+                 align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%,0px);
+
+            }
+
+            @keyframes rotate-anim{
+
+                from{
+                    transform: rotate(0deg);
+                }
+                to{
+                    transform: rotate(360deg);
+                }
+            } 
+
+            @keyframes bg-anim{
+
+                0%{
+                    background-color: #ff00ea;
+                }
+                50%{
+                    background-color: #ffd900;
+                }
+                100%{
+                    background-color: rebeccapurple;
+                }
+            } 
         }
     }
 }
