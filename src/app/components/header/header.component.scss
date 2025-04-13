@@ -1,7 +1,7 @@
 .wrap{
     --pcolor: #1b1b1b;
 
-    font-size: 22px;
+    font-size: 20px;
     color: var(--pcolor);
     
 
@@ -56,7 +56,7 @@
         }
     }
     header{
-        padding: 20px 0px;
+        padding: 20px 0;
         font-weight: 600 ;
         align-items: center;
 
@@ -126,8 +126,10 @@
     }
 
     .content{
+
+
         h1{
-            margin:0 0 30px;
+            margin: 0 0 20px;
             font-size: 70px;
             line-height: 65px;
 
@@ -138,6 +140,14 @@
             line-height: 24px;
             margin: 0 0 30px;
         }
+
+        img {
+            display: block;
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: #ff00ea 0px 0px 20px 0px, #ffd900 0px 0px 20px 0px, rebeccapurple 0px 0px 20px 0px;
+          }
 
         .btn-wrap{
             @extend .flex;
@@ -154,10 +164,13 @@
 
         .bulb{
             position: absolute;
-            right: 20px ;
-            bottom: 20px;
+            right: 100px ;
+            bottom: 70px;
+
+            
 
         }
+        
 
         .hire-me{
             position: absolute;
