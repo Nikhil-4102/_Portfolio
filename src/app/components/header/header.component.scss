@@ -3,6 +3,7 @@
 
     font-size: 20px;
     color: var(--pcolor);
+    padding: 20px 20px 80px;
     
 
     .container{
@@ -134,14 +135,33 @@
             line-height: 65px;
 
         }
+        h2{
+            margin: 0;
+            font-size: 55px;
+        }
+
+        .text-right{
+            text-align: right;
+        }
+
+       
+
         p{
             font-size: 18px;
             font-weight: 500;
             line-height: 24px;
             margin: 0 0 30px;
+
+            &.fs14{
+                font-size: 14px;
+            }
         }
 
-        img {
+        .label{
+
+        }
+
+        .profile{
             display: block;
             max-width: 90%;
             height: auto;
@@ -165,11 +185,21 @@
         .bulb{
             position: absolute;
             right: 100px ;
-            bottom: 70px;
-
-            
+            bottom: 100px;
+            /* tran property removed as it is incomplete */
+            animation: zoomPulse 2s ease-in-out infinite;
 
         }
+
+        @keyframes zoomPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        
         
 
         .hire-me{
@@ -201,29 +231,123 @@
                 transform: translate(-50%,0px);
 
             }
+ 
+        }
 
-            @keyframes rotate-anim{
+        h5{
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 20px;
+        }
 
-                from{
-                    transform: rotate(0deg);
-                }
-                to{
-                    transform: rotate(360deg);
-                }
-            } 
+        .border{
+             border: 1px solid var(--pcolor);
+                padding: 24px;
+                border-radius: 8px;
+                box-shadow: 12px 12px 0px var(--pcolor);
 
-            @keyframes bg-anim{
+                img{
+                    border-radius: 8px;
+                }
+        }
 
-                0%{
-                    background-color: #ff00ea;
+        h3{
+            font-size: 40px;
+            font-weight: 600;
+            margin: 0 0 20px;
+        }
+
+        ul{
+            padding: 0;
+            margin: 0;
+            @extend .flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+            li{
+                background-color: var(--pcolor);
+                list-style-type: none;
+                color: #fff;
+                padding: 8px 20px;
+                border-radius: 8px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@keyframes rotate-anim{
+
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+} 
+
+@keyframes bg-anim{
+
+    0%{
+        background-color: #ff00ea;
+    }
+    50%{
+        background-color: #ffd900;
+    }
+    100%{
+        background-color: rebeccapurple;
+    }
+}
+@media(max-width:959px){
+
+    .wrap{
+        .content{
+            h1{
+                font-size: 50px;
+                line-height: 50px;
+               }
+        }
+    }        
+
+}
+
+@media(max-width:599px){
+    .wrap{
+        .content{
+            h1{
+                font-size: 40px;
+                line-height: 40px;
+            }
+
+            h2{
+                font-size: 36px;
+            }
+
+            .hire-me{
+                
+                right: 20px;
+                left: auto;
+            
+                
+                svg{
+                    width: 125px;
                 }
-                50%{
-                    background-color: #ffd900;
+
+                div{
+
+                    width: 60px;
+                    height: 60px;
+                    font-size: 10px;
+              
                 }
-                100%{
-                    background-color: rebeccapurple;
-                }
-            } 
+            }
+
+            ul{
+                align-items: start;
+                justify-content: start;
+            }
         }
     }
 }
